@@ -1,0 +1,204 @@
+:root{
+  --bg:#0b1220;
+  --card:#101b30;
+  --text:#e8eefc;
+  --muted:#a9b7d3;
+  --accent:#2dd4bf;
+  --accent2:#60a5fa;
+  --navy:#0b1f3b;
+  --border:rgba(255,255,255,.12);
+  --shadow: 0 18px 50px rgba(0,0,0,.45);
+  --radius:18px;
+  --max:1080px;
+  --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:radial-gradient(1200px 700px at 15% 5%, rgba(96,165,250,.18), transparent 60%),
+                                    radial-gradient(900px 600px at 90% 15%, rgba(45,212,191,.16), transparent 55%),
+                                    var(--bg);
+         color:var(--text); font-family:var(--font);}
+a{color:inherit}
+.container{max-width:var(--max); margin:0 auto; padding:22px 18px}
+.header{
+  display:flex; align-items:center; justify-content:space-between; gap:14px;
+  position:sticky; top:0; z-index:20; backdrop-filter: blur(14px);
+  background:rgba(11,18,32,.55); border-bottom:1px solid rgba(255,255,255,.06);
+}
+.brand{display:flex; align-items:center; gap:12px; text-decoration:none}
+.brand img{
+  width:72px;
+  height:72px;
+  padding:12px;
+  background:#fff;
+  border-radius:18px;
+  box-shadow:0 10px 25px rgba(0,0,0,.28);
+}
+
+.brand .name{font-weight:800;letter-spacing:.2px;font-size:18px;line-height:1.05;max-width:220px}
+.brand .tag{opacity:.85;font-size:13px;line-height:1.2;margin-top:2px}
+.nav{display:flex; align-items:center; gap:14px}
+.nav a{color:var(--muted); text-decoration:none; font-weight:600; font-size:14px}
+.nav a:hover{color:var(--text)}
+.lang{
+  border:1px solid var(--border); background:rgba(255,255,255,.04); color:var(--text);
+  padding:9px 12px; border-radius:999px; font-weight:700; cursor:pointer;
+}
+.hero{padding:34px 0 18px}
+.heroGrid{display:grid; grid-template-columns: 1fr; gap:18px; align-items:stretch}
+@media (max-width:900px){.heroGrid{grid-template-columns:1fr}}
+.card{
+  background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:var(--radius);
+  box-shadow: var(--shadow);
+}
+.heroMain{padding:26px;
+  position:relative;
+  overflow:hidden;
+}
+.heroMain::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:url("assets/hero-tech.jpg");
+  background-size:cover;
+  background-position:70% 40%;
+  opacity:.14;
+  filter:saturate(1.1) contrast(1.05);
+  pointer-events:none;
+}
+.heroMain::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(1200px 500px at 20% 0%, rgba(11,240,226,.20), transparent 55%),
+             linear-gradient(180deg, rgba(10,16,23,.55), rgba(10,16,23,.35));
+  pointer-events:none;
+}
+.heroMain > *{
+  position:relative;
+  z-index:1;
+}
+
+.kicker{display:inline-flex; align-items:center; gap:10px; color:var(--muted); font-weight:700; font-size:13px; letter-spacing:.3px}
+.dot{width:9px;height:9px;border-radius:50%; background:var(--accent)}
+h1{margin:14px 0 10px; font-size:44px; line-height:1.05}
+@media (max-width:900px){h1{font-size:36px}}
+.sub{color:var(--muted); font-size:16px; line-height:1.55; margin:0 0 16px}
+.rotate{margin-top:14px; padding:14px; border:1px dashed rgba(255,255,255,.18); border-radius:14px; background:rgba(0,0,0,.14)}
+.rotateLabel{color:var(--muted); font-weight:700; font-size:12px; letter-spacing:.25px}
+.rotateText{margin-top:7px; font-weight:900; font-size:18px; letter-spacing:.2px}
+.pillRow{display:flex; gap:10px; flex-wrap:wrap; margin-top:16px}
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:10px;
+  padding:12px 14px; border-radius:12px; border:1px solid var(--border);
+  text-decoration:none; font-weight:800; letter-spacing:.2px;
+}
+.btnPrimary{background:linear-gradient(135deg, rgba(45,212,191,.95), rgba(96,165,250,.95)); color:#071018; border:0}
+.btnGhost{background:rgba(255,255,255,.05); color:var(--text)}
+.btnRow{display:flex; gap:12px; flex-wrap:wrap; margin:10px 0 6px}
+/* WhatsApp button should match the site palette (no bright green) */
+.btnWhatsApp{background:linear-gradient(135deg, rgba(45,212,191,.95), rgba(96,165,250,.95)); color:#071018; border:0}
+.btnWhatsApp:hover{filter:brightness(.95)}
+.heroSide{padding:20px; display:flex; flex-direction:column; gap:14px}
+.sideTop{display:flex; align-items:center; gap:12px}
+.sideTop img{width:44px;height:44px;background:#ffffff;padding:8px;border-radius:14px;box-shadow:0 10px 25px rgba(0,0,0,.25)}
+.sideTitle{font-weight:800;font-size:18px;line-height:1.1}
+.sideNote{color:var(--muted); font-size:13px; margin-top:4px}
+.grid2{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+@media (max-width:520px){.grid2{grid-template-columns:1fr}}
+.tile{padding:14px; border:1px solid rgba(255,255,255,.10); border-radius:14px; background:rgba(0,0,0,.12)}
+.tile b{display:block; margin-bottom:6px}
+.tile span{color:var(--muted); font-size:13px; line-height:1.45}
+.section{padding:14px 0 6px}
+.section h2{font-size:22px; margin:0 0 10px}
+.section p{margin:0; color:var(--muted); line-height:1.6}
+.services{margin-top:12px; display:grid; grid-template-columns: repeat(3, 1fr); gap:12px}
+@media (max-width:900px){.services{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.services{grid-template-columns:1fr}}
+.service{padding:16px}
+.service .title{font-weight:900; margin-bottom:6px}
+.service .desc{color:var(--muted); font-size:13px; line-height:1.45}
+.footer{padding:24px 0 40px; color:var(--muted); font-size:12px}
+.contactTop{display:flex; flex-wrap:nowrap; align-items:flex-start; gap:16px}
+.qrMini img{width:128px; height:128px; border-radius:12px; border:1px solid rgba(255,255,255,.12); background:#fff}
+.contactActions{flex:1 1 auto; min-width:180px}
+.contactMap{flex:0 1 320px}
+.contactMap img{width:100%; height:auto; border-radius:12px; border:1px solid rgba(255,255,255,.12)}
+.contactDetails{margin-top:14px}
+.addressGrid{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+@media (max-width:620px){
+  /* Always keep QR, contact buttons, and map side-by-side (shrink to fit) */
+  .contactTop{justify-content:center; text-align:left; gap:12px}
+  .qrMini img{width:96px; height:96px}
+  .contactActions{min-width:140px}
+  .contactMap{flex:0 1 180px}
+  .addressGrid{grid-template-columns:1fr}
+}
+  .addressGrid{grid-template-columns:1fr}
+}
+.small{font-size:12px; color:var(--muted)}
+.hr{height:1px; background:rgba(255,255,255,.08); margin:18px 0}
+.badge{display:inline-flex; align-items:center; gap:8px; padding:8px 10px; border:1px solid rgba(255,255,255,.12); border-radius:999px; background:rgba(0,0,0,.12); color:var(--muted); font-size:12px; font-weight:800}
+
+/* Rotating service with icon */
+.rotateLine{display:flex;align-items:center;gap:12px;margin-top:10px}
+.rotIcon{width:42px;height:42px;display:inline-flex;align-items:center;justify-content:center;border-radius:12px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12)}
+.rotIcon svg{width:26px;height:26px;display:block}
+
+@media (max-width:520px){
+  .brand .name{font-size:16px;max-width:180px}
+  .brand img{
+  width:72px;
+  height:72px;
+  padding:12px;
+  background:#fff;
+  border-radius:18px;
+  box-shadow:0 10px 25px rgba(0,0,0,.28);
+}
+
+}
+
+
+/* Contact layout */
+.contactTop{display:flex; flex-wrap:wrap; align-items:flex-start; gap:14px}
+.qrMini{flex:0 0 auto}
+.qrMini img{width:118px; height:118px; border-radius:18px; background:#fff; padding:10px; box-shadow:0 10px 25px rgba(0,0,0,.28)}
+.contactActions{flex:1 1 auto; min-width:220px}
+.contactDetails{margin-top:10px; padding-top:10px; border-top:1px solid rgba(255,255,255,.08)}
+.addressGrid{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+.contactLine{margin-top:8px}
+.contactLine a{color:var(--text); text-decoration:underline}
+
+@media (max-width:620px){
+  .contactTop{justify-content:center}
+  .qrMini img{width:140px; height:140px}
+  .addressGrid{grid-template-columns:1fr}
+}
+
+
+.addrBlock{margin-top:6px;}
+.addrLabel{font-weight:900; letter-spacing:.2px; opacity:.95; margin-top:6px;}
+.addrNote{opacity:.75; font-size:12px; margin-top:2px;}
+.miniLabel{font-weight:800; opacity:.85;}
+
+
+/* Circuit Breaker Protection Test & Certification */
+.subtle{opacity:.85;margin-top:-8px}
+.cbGrid{display:grid;grid-template-columns:1.1fr .9fr;gap:16px;margin-top:14px}
+.cbText h3{margin:0 0 10px 0}
+.bullets{margin:0;padding-left:18px}
+.bullets li{margin:6px 0}
+.cbMedia{display:flex;flex-direction:column;gap:12px}
+.cbImg{width:100%;height:auto;border-radius:14px;display:block}
+.cbPlaceholder{border:1px dashed rgba(255,255,255,.25);border-radius:14px;padding:14px}
+.brandGrid{padding:12px;border-radius:14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08)}
+.brandTitle{font-weight:800;margin-bottom:8px}
+.brandBadges{display:flex;flex-wrap:wrap;gap:8px}
+.brandBadge{padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.18);background:rgba(0,0,0,.12);font-size:12px;font-weight:700}
+.tinyDisclaimer{margin-top:10px;font-size:11px;opacity:.8;line-height:1.35}
+.legalNote{margin-top:12px;padding:10px 12px;border-radius:12px;background:rgba(255,200,0,.08);border:1px solid rgba(255,200,0,.2);font-size:12px;line-height:1.4}
+.miniNote{font-size:12px;opacity:.9;line-height:1.4}
+@media (max-width: 860px){
+  .cbGrid{grid-template-columns:1fr}
+}
